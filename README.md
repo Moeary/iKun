@@ -7,3 +7,4 @@
 
 ### 如何使用？
 git pull或者git clone本项目至本地<br>
+	git clone https://github.com/Moeary/iKun.git
