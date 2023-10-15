@@ -1,0 +1,10 @@
+[
+ {
+  "InstFile" : "D:/Python_Project/TangNano-9K-example/spi_lcd/src/top.v",
+  "InstLine" : 7,
+  "InstName" : "lcd114_test",
+  "ModuleFile" : "D:/Python_Project/TangNano-9K-example/spi_lcd/src/top.v",
+  "ModuleLine" : 7,
+  "ModuleName" : "lcd114_test"
+ }
+]
