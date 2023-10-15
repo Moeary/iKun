@@ -60,11 +60,38 @@ assign cxk[9][32399:0] = 32400'h +"一大串16进制数字"+；
 会弹出一个新窗口用来烧录<br>
 ![image](https://github.com/Moeary/iKun/assets/103913682/fcfa3f29-dfd8-4347-9fb8-56f51dcb5342)
 <br>
-点击save，然后再点击中上角的下载器下载到SRAM里面
+点击save，然后再点击中上角的下载器下载到SRAM里面<br>
+
 ###### 默认下载到SRAM，重启就没了，为了防止这个可以直接下载到flash里面不会丢失数据
+<br>
 ![image](https://github.com/Moeary/iKun/assets/103913682/330f5b95-72be-4c02-acac-57f850bda07e)
+<br>
 ![image](https://github.com/Moeary/iKun/assets/103913682/6e37c7b1-a6bb-458c-ab27-726f788b06f6)
-等待一会就可以看到你的视频已经成功转进去并在lcd显示屏上面显示了
+<br>
+等待一会就可以看到你的视频已经成功转进去并在lcd显示屏上面显示了 至此 就弄好了。
+<br>
+
+###### GowinIDE如果有不懂的可以去看看https://wiki.sipeed.com/hardware/zh/tang/Tang-Nano-9K/examples/LED.html这个先把IDE基本功能都弄明白一点再做会好很多
+###### Verilog代码我我限制最多只有10帧，可以自行修改，需要修改的变量为
+```
+142 reg [3:0] time_cnt;   //[3:0]一共4bit最多只能循环16帧，可以自行拓展
+143 wire [32399:0]cxk[9:0];  //后面9:0最多只能循环10帧 可以自行拓展
+```
+###### 如果修改了 time_cnt的bit数 则下面也需要修改
+```
+255                  if(time_cnt == 10) begin //达到10帧后
+256                      time_cnt<=4'b0000;   //这里重置为0 重新开始循环
+257                  end
+```
+###### 比如我想改成100帧可以这样改
+```
+142 reg [7:0] time_cnt;   //[3:0]一共8bit最多只能循环128帧
+143 wire [32399:0]cxk[99:0];  //后面99:0最多只能循环100帧 
 
 
+255                  if(time_cnt == 100) begin //达到100帧后
+256                      time_cnt<=8'b0000_0000;   //这里重置为0 重新开始循环
+257                  end
+```
+###### 这个Verilog代码我我根据官方的代码来改的，我Verilog学的还不是很好，希望有大佬指点一下
 
