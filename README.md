@@ -39,6 +39,19 @@ assign cxk[9][32399:0] = 32400'h +"一大串16进制数字"+；
 ###### PS：这里因为我偷懒 这个数组并没有从0开始，需要手动修改为从0开始，然后再丢入Verilog文件中
 至此 准备工作全部完成，接下来需要进入Gowin IDE中进行修改
 打开GowinIDE 点击左上角的文件->打开 选择我们clone下来的14_test.gprj 进行打开
-lcd1![image](https://github.com/Moeary/iKun/assets/103913682/96197819-7abe-4cd5-8d3b-0b10f0482523)
+![image](https://github.com/Moeary/iKun/assets/103913682/96197819-7abe-4cd5-8d3b-0b10f0482523)
+<br>
+打开后双击src/top.v文件 准备开始修改
+<br>
+![image](https://github.com/Moeary/iKun/assets/103913682/70af3537-3fb8-47d2-be80-1d075cd41517)
+<br>
+选中蓝色框住的10行assign代码 ，进行删除<br>
+![image](https://github.com/Moeary/iKun/assets/103913682/2597a191-9581-4a3c-8d5a-2b65805f90be)
+<br>
+然后把之前cxk.txt文件中的10行assign代码Ctrl^C Ctrl^V复制进来<br>
+至此 替换工作就完成了<br>
+然后点击Process，右击Place&Route 选择Clean & Rerun All进行电路分析布线并生成BitStream文件进行烧录<br>
+![image](https://github.com/Moeary/iKun/assets/103913682/920d53a4-8522-416c-9a73-06058de6c904)
+![image](https://github.com/Moeary/iKun/assets/103913682/06b6f084-0d2c-4c5b-984c-0dbddcb89940)
 
 
