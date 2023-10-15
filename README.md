@@ -37,3 +37,8 @@ assign cxk[2][32399:0] = 32400'h +"一大串16进制数字"+；
 assign cxk[9][32399:0] = 32400'h +"一大串16进制数字"+；
 ```
 ###### PS：这里因为我偷懒 这个数组并没有从0开始，需要手动修改为从0开始，然后再丢入Verilog文件中
+至此 准备工作全部完成，接下来需要进入Gowin IDE中进行修改
+打开GowinIDE 点击左上角的文件->打开 选择我们clone下来的14_test.gprj 进行打开
+lcd1![image](https://github.com/Moeary/iKun/assets/103913682/96197819-7abe-4cd5-8d3b-0b10f0482523)
+
+
