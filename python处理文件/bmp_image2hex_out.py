@@ -21,11 +21,11 @@ def binary_to_hex(binary_data):
 
 def save_hex_data_to_file(hex_data, file_name, img_num):
     with open(file_name, 'a') as file:  # 使用 'a' 模式以追加方式打开文件
-        file.write(f'assign cxk[{img_num}][32399:0] = 32400\'h{hex_data};\n')
+        file.write(f'assign cxk[{img_num-1}][32399:0] = 32400\'h{hex_data};\n')
 
 # 处理多张图片
-for i in range(1,9):  # 假设你要处理1到9张图片
+for i in range(1,1000):  # 假设你要处理1到9张图片
     image_path = f"out/frame{str(i).zfill(4)}.bmp"  # 根据图片的命名规则来拼接图片路径
     binary_data = image_to_binary(image_path) 
     hex_data = binary_to_hex(binary_data)
-    save_hex_data_to_file(hex_data, "cxk.txt", i-1) #保存至当前目录下的cxk.txt
+    save_hex_data_to_file(hex_data, "cxk.txt", i) #保存至当前目录下的cxk.txt
